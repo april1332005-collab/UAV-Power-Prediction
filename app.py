@@ -10,7 +10,8 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model():
-    return joblib.load("/content/uav_power_model_new.pkl")
+    import os
+    return joblib.load(os.path.join(os.path.dirname(__file__), "uav_power_model_new.pkl"))
 
 model = load_model()
 
